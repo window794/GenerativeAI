@@ -1,117 +1,29 @@
-/* 全体のスタイル */
-body {
-    background: radial-gradient(circle, #1a1a2e, #16213e);
-    color: #ffffff;
-    font-family: 'Orbitron', sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-/* クイズコンテナ */
-.quiz-container {
-    background: rgba(0, 0, 0, 0.8);
-    border: 2px solid #00d4ff;
-    border-radius: 15px;
-    padding: 20px;
-    width: 80%;
-    max-width: 600px;
-    box-shadow: 0px 0px 15px #00d4ff;
-}
-
-/* 🔥 問題文のフォントを大きくする */
-#upperText {
-    font-size: 2em;  /* 🔥 ここを大きく */
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-shadow: 0px 0px 10px #ff00ff;
-}
-
-/* 選択肢を縦に並べるコンテナ */
-.options-container {
-    display: flex;
-    flex-direction: column;  /* 縦並びにする */
-    align-items: center;  /* 中央揃え */
-    justify-content: center;
-    width: 100%;
-    gap: 15px;  /* 選択肢の間隔を空ける */
-}
-
-/* 🔥 選択肢のフォントを少し小さくする */
-.option {
-    display: block;  /* 横並びにならないようにブロック要素にする */
-    background: transparent;
-    border: 2px solid #ff00ff;
-    color: #ffffff;
-    font-size: 1em;  /* 🔥 ここを小さく */
-    padding: 12px;
-    width: 90%;
-    max-width: 500px;
-    border-radius: 10px;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-    word-wrap: break-word;
-    white-space: normal;
-    line-height: 1.5;
-    word-break: break-word;
-}
-
-/* 選択肢の間隔 */
-.option:not(:last-child) {
-    margin-bottom: 10px;  /* 🔥 間隔を少し狭める */
-}
-
-/* 選択肢のホバー時のアニメーション */
-.option:hover {
-    background: #ff00ff;
-    box-shadow: 0px 0px 15px #ff00ff;
-    transform: scale(1.05);
-}
-
-/* 正解のエフェクト */
-.correct {
-    background: #00ff00 !important;
-    box-shadow: 0px 0px 15px #00ff00 !important;
-}
-
-/* 不正解のエフェクト */
-.wrong {
-    background: #ff0000 !important;
-    box-shadow: 0px 0px 15px #ff0000 !important;
-}
-
-/* フッター */
-.footer {
-    margin-top: 20px;
-    font-size: 0.8em;
-    color: #888;
-}
-
-/* アニメーション */
-@keyframes glow {
-    0% { box-shadow: 0px 0px 5px #ff00ff; }
-    50% { box-shadow: 0px 0px 15px #ff00ff; }
-    100% { box-shadow: 0px 0px 5px #ff00ff; }
-}
-
-.option:active {
-    animation: glow 0.5s ease-in-out;
-}
-
-/* フェードインのアニメーション */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
+/* 📱 レスポンシブ対応 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* スマホ画面で左右の余白を作る */
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    .quiz-container {
+        width: 95%;  /* 画面幅いっぱいに */
+        max-width: 100%; /* 最大幅を制限 */
+    }
+
+    /* 🔥 問題文のフォントを小さめに */
+    #upperText {
+        font-size: 1.5em; /* スマホで大きすぎないように */
+    }
+
+    /* 🔥 選択肢のスタイル */
+    .option {
+        font-size: 1em; /* スマホでは少し小さめ */
+        padding: 15px; /* タップしやすく */
+        width: 100%; /* 画面幅いっぱいに */
+        margin: 10px 0; /* 選択肢同士の間隔を広げる */
+    }
+
+    /* ボタンを押しやすく */
+    .option:hover {
+        transform: scale(1.02); /* ホバー時のエフェクトを軽めに */
     }
 }
