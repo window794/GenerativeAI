@@ -43,14 +43,14 @@ body {
     gap: 15px;
 }
 
-/* 🎯 選択肢のスタイル */
+/* 🎯 選択肢のスタイル（デスクトップ） */
 .option {
     display: block;
     background: transparent;
     border: 2px solid #ff00ff;
     color: #ffffff;
-    font-size: 1.2em;
-    padding: 15px;
+    font-size: 0.9em;  /* 🔥 文字サイズを少し小さく */
+    padding: 12px;  /* 🔥 タップしやすさを維持 */
     width: 90%;
     max-width: 500px;
     border-radius: 10px;
@@ -59,7 +59,7 @@ body {
     transition: all 0.3s ease-in-out;
     word-wrap: break-word;
     white-space: normal;
-    line-height: 1.5;
+    line-height: 1.4;  /* 🔥 行間を少し詰める */
     word-break: break-word;
     margin: 10px auto;
 }
@@ -133,17 +133,17 @@ body {
 
     /* 🔥 問題文のフォントサイズを調整 */
     #upperText {
-        font-size: 1.6em;
+        font-size: 1.6em; /* 🔥 スマホで適切なサイズ */
         padding: 10px;
     }
 
     /* 🔥 選択肢のスタイル */
     .option {
-        font-size: 1em;
-        padding: 15px;
+        font-size: 0.85em;  /* 🔥 スマホではもう少し小さく */
+        padding: 10px;  /* 🔥 タップしやすく調整 */
         width: 85%;
         max-width: 450px;
-        margin: 12px auto;
+        margin: 8px auto;
         border-radius: 8px;
     }
 
